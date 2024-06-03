@@ -6,13 +6,24 @@ var store = [
 
 ];
  let storeAnalysis =()=>{
+
+    //1st problem
     // store.forEach((ele)=>{
     //    console.log(`Name :${ele.name}, Rating :${ele.rating}`)
     
     // });
-   let totoalRating = store.reduce((acc,curr)=>
-   acc + curr.rating ,0)
-   return totoalRating/store.length
+
+    //2nd. problem
+//    let totoalRating = store.reduce((acc,curr)=>
+//    acc + curr.rating ,0)
+//    return totoalRating/store.length
+
+   //3rd problem
+   let minPrice = store.reduce((acc1,curr1)=>{
+    let cal = curr1.price < acc1.price ? curr1 :acc1;
+    return cal
+   },store[0])
+   return minPrice
  }
 
 let x = storeAnalysis(store)
