@@ -7,8 +7,13 @@
 <style>
     #main{
         display: grid;
-        grid-template-columns: repeat(5,1fr);
+        grid-template-columns: repeat(4,1fr);
         grid-gap: 20px;
+    }
+    #main>div{
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
     }
 </style>
 </head>
@@ -116,10 +121,8 @@
     products.forEach((ele)=>{
 
         let div = document.createElement("div");
-        div.style.width = "300px"
-        div.style.height = "550px"
-        div.style.border = "1px solid black"
-        div.style.textAlign = "center"
+        // div.style.border = "1px solid black"
+        // div.style.textAlign = "center"
 
         let title = document.createElement("h4")
             title.innerText = ele.title
@@ -131,21 +134,16 @@
         let category = document.createElement("p")
         category.innerText = ele.category
         let img = document.createElement("img")
-        img.setAttribute("src",ele.image)
-        img.style.height = "100px"
-        img.style.width = "100px"
+       img.src = ele.image;
+       img.style.height = "100px"
+       img.style.width = "100px"
        
 
         let rating = document.createElement("span")
         rating.innerText = ele.rating
 
         main.appendChild(div)
-        div.appendChild(title)
-        div.append(img)
-        div.appendChild(price)
-        div.appendChild(description)
-        div.appendChild(category)
-        div.append(rating)
+        div.append(title,price,description,category,img,rating)
 
     })
  
@@ -153,3 +151,12 @@
 
 </script>
 </html>
+
+
+var store = [
+    {name: "Laptop", price: 75000, rating: 4.5},
+    {name: "Tablet", price: 30000, rating: 4.2},
+    {name: "Smartphone", price: 60000, rating: 4.7},
+    {name: "Smartwatch", price: 20000, rating: 3.9}
+
+];

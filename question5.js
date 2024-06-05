@@ -22,7 +22,7 @@ var store = [
    let minPrice = store.reduce((acc1,curr1)=>{
     let cal = curr1.price < acc1.price ? curr1 :acc1;
     return cal
-   },store[0])
+   },store.price[0])
    return minPrice
  }
 
